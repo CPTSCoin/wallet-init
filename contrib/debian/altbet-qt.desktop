@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CPTS
+Comment=CPTS P2P Cryptocurrency
+Comment[fr]=CPTS, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=CPTS, eşten eşe kriptografik sanal para birimi
+Exec=cpts-qt %u
+Terminal=false
+Type=Application
+Icon=cpts128
+MimeType=x-scheme-handler/cpts;
+Categories=Office;Finance;

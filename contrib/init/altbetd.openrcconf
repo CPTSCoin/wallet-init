@@ -1,0 +1,26 @@
+# /etc/conf.d/cptsd: config file for /etc/init.d/cptsd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/cpts/cpts.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/cptsd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/cptsd.pid"
+
+# Where to write cptsd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/cptsd"
+
+# User and group to own cptsd process
+#BITCOIND_USER="cpts"
+#BITCOIND_GROUP="cpts"
+
+# Path to cptsd executable
+#BITCOIND_BIN="/usr/bin/cptsd"
+
+# Nice value to run cptsd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
