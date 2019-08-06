@@ -201,31 +201,31 @@ bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMin
 
     //LogPrintf("XX69----------> IsBlockValueValid(): nMinted: %d, nExpectedValue: %d\n", FormatMoney(nMinted), FormatMoney(nExpectedValue));
 
-    if (!masternodeSync.IsSynced()) { //there is no budget data to use to check anything
-        //super blocks will always be on these blocks, max 100 per budgeting
-        if (nHeight % GetBudgetPaymentCycleBlocks() < 100) {
-            return true;
-        } else {
-            if (nMinted > nExpectedValue) {
-                return false;
-            }
-        }
-    } else { // we're synced and have data so check the budget schedule
-
-        //are these blocks even enabled
-        if (!IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS)) {
-            return nMinted <= nExpectedValue;
-        }
-
-        if (budget.IsBudgetPaymentBlock(nHeight)) {
-            //the value of the block is evaluated in CheckBlock
-            return true;
-        } else {
-            if (nMinted > nExpectedValue) {
-                return false;
-            }
-        }
-    }
+//    if (!masternodeSync.IsSynced()) { //there is no budget data to use to check anything
+//        //super blocks will always be on these blocks, max 100 per budgeting
+//        if (nHeight % GetBudgetPaymentCycleBlocks() < 100) {
+//            return true;
+//        } else {
+//            if (nMinted > nExpectedValue) {
+//                return false;
+//            }
+//        }
+//    } else { // we're synced and have data so check the budget schedule
+//
+//        //are these blocks even enabled
+//        if (!IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS)) {
+//            return nMinted <= nExpectedValue;
+//        }
+//
+//        if (budget.IsBudgetPaymentBlock(nHeight)) {
+//            //the value of the block is evaluated in CheckBlock
+//            return true;
+//        } else {
+//            if (nMinted > nExpectedValue) {
+//                return false;
+//            }
+//        }
+//    }
 
     return true;
 }
